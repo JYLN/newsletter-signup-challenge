@@ -9,4 +9,6 @@
 	<title>Frontend Mentor | Newsletter sign-up form with success message</title>
 </svelte:head>
 
-{@render children()}
+<main>
+	{@render children()}
+</main>

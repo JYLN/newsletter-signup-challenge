@@ -1,2 +1,10 @@
-Thanks for subscribing! A confirmation email has been sent to ash@loremcompany.com. Please open it
-and click the button inside to confirm your subscription. Dismiss message
+<dialog>
+	<div>
+		<h1>Thanks for subscribing!</h1>
+		<p>
+			A confirmation email has been sent to <strong>ash@loremcompany.com</strong>. Please open it
+			and click the button inside to confirm your subscription.
+		</p>
+	</div>
+	<button>Dismiss message</button>
+</dialog>
