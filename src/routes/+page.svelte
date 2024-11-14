@@ -1,9 +1,27 @@
 <script lang="ts">
+	import { signupSchema } from '$lib/schemas.js';
+	import { cn } from '$lib/utils.js';
+	import { superForm } from 'sveltekit-superforms';
+	import { zodClient } from 'sveltekit-superforms/adapters';
+	import type { PageData } from './$types.js';
+
+	interface Props {
+		data: PageData;
+	}
+
+	let { data }: Props = $props();
+
 	const newsletterListItems = [
 		'Product discovery and building what matters',
 		'Measuring to ensure updates are a success',
 		'And much more!'
 	];
+
+	const { form, constraints, errors, enhance } = superForm(data.form, {
+		validators: zodClient(signupSchema)
+	});
+
+	$inspect($errors).with(console.log);
 </script>
 
 <section
@@ -29,14 +47,26 @@
 				</li>
 			{/each}
 		</ul>
-		<form>
+		<form method="POST" use:enhance>
 			<div class="mt-10">
-				<label for="email" class="text-xs/[1.125rem] font-bold">Email address</label>
+				<div class="flex">
+					<label for="email" class="text-xs/[1.125rem] font-bold">Email address</label>
+					{#if $errors.email}
+						<span class="ml-auto inline-block text-xs/[1.125rem] font-bold text-tomato">
+							{$errors.email}
+						</span>
+					{/if}
+				</div>
 				<input
 					type="email"
 					name="email"
+					bind:value={$form.email}
 					placeholder="email@company.com"
-					class="mt-2 block w-full rounded-lg border border-grey/25 px-6 py-4 placeholder:text-darkslategrey/[0.5] focus:border-darkslategrey focus:ring-0"
+					class={cn(
+						'mt-2 block w-full rounded-lg border border-grey/25 px-6 py-4 placeholder:text-darkslategrey/[0.5] focus:border-darkslategrey focus:ring-0',
+						$errors.email && 'border-tomato bg-tomato/[0.15] text-tomato placeholder:text-tomato'
+					)}
+					{...$constraints.email}
 				/>
 			</div>
 

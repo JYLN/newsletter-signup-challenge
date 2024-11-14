@@ -1,4 +1,17 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
+	import type { PageData } from './$types';
+
+	interface Props {
+		data: PageData;
+	}
+
+	let { data }: Props = $props();
+
+	function handleClick(event: Event) {
+		event.preventDefault();
+		goto('/');
+	}
 </script>
 
 <section
@@ -8,9 +21,9 @@
 		<img src="/images/icon-success.svg" alt="" />
 		<h1 class="mt-10">Thanks for subscribing!</h1>
 		<p class="mt-6">
-			A confirmation email has been sent to <strong>ash@loremcompany.com</strong>. Please open it
-			and click the button inside to confirm your subscription.
+			A confirmation email has been sent to <strong>{data.userEmail}</strong>. Please open it and
+			click the button inside to confirm your subscription.
 		</p>
 	</div>
-	<button class="button md:mt-10">Dismiss message</button>
+	<button onclick={handleClick} class="button md:mt-10">Dismiss message</button>
 </section>
