@@ -34,8 +34,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Frontend Mentor](https://www.frontendmentor.io/solutions/newsletter-sign-up-form-using-sveltekit-and-tailwind-css-GkZd94A6Qa)
+- Live Site URL: [Vercel](https://jyln-newsletter-signup-challenge.vercel.app/)
 
 ## My process
 
