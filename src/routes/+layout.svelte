@@ -9,6 +9,6 @@
 	<title>Frontend Mentor | Newsletter sign-up form with success message</title>
 </svelte:head>
 
-<main>
+<main class="grid min-h-screen md:place-content-center md:py-10">
 	{@render children()}
 </main>

@@ -18,11 +18,17 @@ export default {
 			white: '#FFFFFF'
 		},
 		extend: {
+			backgroundImage: {
+				button: 'linear-gradient(#242742, #242742, #FF6A3A, #FF527B)'
+			},
 			boxShadow: {
 				button: '0 1rem 2rem 0 hsla(4, 100%, 67%, 0.5)'
 			},
 			fontFamily: {
 				roboto: ['Roboto', 'sans-serif']
+			},
+			screens: {
+				md: '60rem'
 			}
 		}
 	},

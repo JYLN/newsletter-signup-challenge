@@ -1,3 +1,19 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+@layer base {
+	body {
+		@apply bg-white font-roboto text-base text-darkslategrey md:bg-charcoalgrey;
+	}
+
+	h1 {
+		@apply text-[2.5rem]/[2.5rem] font-bold md:text-[3.5rem]/[3.5rem];
+	}
+}
+
+@layer components {
+	.button {
+		@apply bg-button mt-6 w-full rounded-lg bg-[length:0.1rem_10rem] bg-top p-4 font-bold text-white transition-all duration-300 ease-in-out hover:bg-bottom hover:shadow-button focus:bg-bottom focus:shadow-button focus:outline focus:outline-2 focus:outline-darkslategrey active:scale-95;
+	}
+}
