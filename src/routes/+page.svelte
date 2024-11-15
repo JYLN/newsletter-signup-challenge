@@ -58,12 +58,13 @@
 					{/if}
 				</div>
 				<input
+					id="email"
 					type="email"
 					name="email"
 					bind:value={$form.email}
 					placeholder="email@company.com"
 					class={cn(
-						'mt-2 block w-full rounded-lg border border-grey/25 px-6 py-4 placeholder:text-darkslategrey/[0.5] focus:border-darkslategrey focus:ring-0',
+						'form-input mt-2 block w-full rounded-lg border-grey/25 px-6 py-4 placeholder:text-darkslategrey/[0.5] focus:border-darkslategrey focus:ring-0',
 						$errors.email && 'border-tomato bg-tomato/[0.15] text-tomato placeholder:text-tomato'
 					)}
 					{...$constraints.email}
